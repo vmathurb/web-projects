@@ -55,9 +55,23 @@ export default class SimpleTable extends React.Component {
                     defaultPageSize={100}
                     pivotBy={["firstName"]}
                     filterable
-                    style={{
-                        height: "500px" // This will force the table body to overflow and scroll, since there is not enough room
-                    }} />
+                    >
+                    {(state, makeTable, instance) => {
+                        return (
+                            <div
+                                style={{
+                                    background: "#ffffff",
+                                    borderRadius: "5px",
+                                    overflow: "hidden",
+                                    padding: "5px",
+                                    height: "500px" // This will force the table body to overflow and scroll, since there is not enough room
+                                }}
+                            >
+                                {makeTable()}
+                            </div>
+                        );
+                    }}
+                </ReactTable>
                 <br />
             </div>
         );
