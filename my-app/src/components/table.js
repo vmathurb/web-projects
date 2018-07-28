@@ -58,15 +58,7 @@ export default class SimpleTable extends React.Component {
                     >
                     {(state, makeTable, instance) => {
                         return (
-                            <div
-                                style={{
-                                    background: "#ffffff",
-                                    borderRadius: "5px",
-                                    overflow: "hidden",
-                                    padding: "5px",
-                                    height: "500px" // This will force the table body to overflow and scroll, since there is not enough room
-                                }}
-                            >
+                            <div>
                                 {makeTable()}
                             </div>
                         );

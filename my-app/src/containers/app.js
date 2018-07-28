@@ -1,8 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
 import NavBar from '../components/navbar.js';
-import { withStyles, Paper } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 import SimpleTable from '../components/table';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -10,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { CSVLink } from 'react-csv';
 
 const styles = theme => ({
   root: {
@@ -38,7 +38,7 @@ class App extends React.Component {
             </Grid>
           </Grid>
           <Grid id="area-selectinput" item xs={12}>
-            <Grid container xs spacing={24}>
+            <Grid container spacing={24}>
               <Grid item>
                 <FormControl className={classes.formControl}>
                   <InputLabel>Age</InputLabel>
@@ -54,6 +54,7 @@ class App extends React.Component {
                     <MenuItem value={30}>Thirty</MenuItem>
                   </Select>
                 </FormControl>
+
               </Grid>
               <Grid item>
                 <FormControl className={classes.formControl}>
@@ -75,19 +76,22 @@ class App extends React.Component {
           <Grid id="area-detailtable" item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      value="checkedA"
-                      classes={{
-                        switchBase: classes.colorSwitchBase,
-                        checked: classes.colorChecked,
-                        bar: classes.colorBar,
-                      }}
-                    />
-                  }
-                  label="Expand"
-                />
+                <div style={{ display: 'block', lineHeight: '4em' }}>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        value="checkedA"
+                        classes={{
+                          switchBase: classes.colorSwitchBase,
+                          checked: classes.colorChecked,
+                          bar: classes.colorBar,
+                        }}
+                      />
+                    }
+                    label="Expand"
+                  />
+                  <CSVLink data="" style={{ float: 'right', textDecoration: 'none' }}>Save</CSVLink>
+                </div>
               </Grid>
               <Grid item xs={12}>
                 <SimpleTable />

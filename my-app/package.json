@@ -9,6 +9,7 @@
     "moment": "^2.22.2",
     "namor": "^1.0.1",
     "react": "^16.4.1",
+    "react-csv": "^1.0.14",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.0",
     "react-table": "^6.8.6"
